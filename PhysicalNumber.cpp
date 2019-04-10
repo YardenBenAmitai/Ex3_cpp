@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "PhysicalNumber.h"
+
 using namespace std;
 using namespace ariel;
-
+#include "PhysicalNumber.h"
 
 void PhysicalNumber::update(PhysicalNumber number){
 	switch (number.unitTOconvert){
