@@ -5,7 +5,7 @@
 using namespace std;
 using namespace ariel;
 
-
+Unit(){}
 void PhysicalNumber::update(PhysicalNumber number){
 	switch (number.unitTOconvert){
 		case 1:
