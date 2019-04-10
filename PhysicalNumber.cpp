@@ -3,9 +3,9 @@
 #include <cmath>
 
 #include "PhysicalNumber.h"
-#include "Unit.h"
 
 using namespace ariel;
+#include "Unit.h"
 
 void PhysicalNumber::update(PhysicalNumber number){
 	switch (number.unitTOconvert){
