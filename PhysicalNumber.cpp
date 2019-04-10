@@ -2,8 +2,8 @@
 #include <string>
 #include <cmath>
 
-#include "PhysicalNumber.hpp"
-#include "Unit.hpp"
+#include "PhysicalNumber.h"
+#include "Unit.h"
 
 using namespace ariel;
 
