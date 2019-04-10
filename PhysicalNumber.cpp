@@ -4,7 +4,6 @@
 
 #include "PhysicalNumber.h"
 
-using namespace ariel;
 void PhysicalNumber::update(PhysicalNumber number){
 	switch (number.unitTOconvert){
 		case 1:
