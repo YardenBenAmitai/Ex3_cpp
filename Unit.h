@@ -1,3 +1,4 @@
+using namespace ariel;
 class Unit
 	{
 		public:
