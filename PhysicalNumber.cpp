@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using spacename ariel;
+using namespace ariel;
 #include "PhysicalNumber.h"
 
 void PhysicalNumber::update(PhysicalNumber number){
