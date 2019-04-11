@@ -31,8 +31,8 @@ namespace ariel
 		bool operator >= (PhysicalNumber const &number);
 		bool operator <= (PhysicalNumber const &number);
 		bool operator != (PhysicalNumber const &number);
-		PhysicalNumber operator++ (int);
-		PhysicalNumber operator-- (int);
+		PhysicalNumber& operator++ ();
+		PhysicalNumber& operator-- ();
 
 		friend ostream& operator<<(ostream& os, const PhysicalNumber& number){
 			string unit;
