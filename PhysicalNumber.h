@@ -15,6 +15,7 @@ namespace ariel
 		PhysicalNumber(double a, int b){
 			num=a;
 			unitTOconvert=b;
+			cout<<"construct "<<endl;
 		}
 		
 		void update (PhysicalNumber number);
@@ -63,6 +64,7 @@ namespace ariel
 			else if(s.compare("[g]")==0) number.unitTOconvert=7;
 			else if(s.compare("[kg]")==0) number.unitTOconvert=8;
 			else if(s.compare("[ton]")==0) number.unitTOconvert=9;
+			cout<<"instream "<<number<<endl;
 			return input;
 		}
 	};
