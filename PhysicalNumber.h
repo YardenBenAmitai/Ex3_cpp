@@ -68,6 +68,3 @@ namespace ariel
 		}					
 	};
 }
-
-using namespace ariel;
-#include "Unit.h"
