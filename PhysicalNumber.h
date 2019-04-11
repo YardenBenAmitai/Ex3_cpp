@@ -4,7 +4,6 @@ using namespace std;
 
 namespace ariel
 {
-	#include "Unit.h"
 	class PhysicalNumber{
 		
 		public:
