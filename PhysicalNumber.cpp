@@ -87,6 +87,7 @@ bool PhysicalNumber::ConvertionCheck(PhysicalNumber* a, PhysicalNumber b){
 	}
 	
 PhysicalNumber PhysicalNumber::operator+(PhysicalNumber const &number){
+	cout<<"operator+ "<<*this<<"+"<<number<<endl;
 		ConvertionCheck(this, number);
 		PhysicalNumber n;
 		n.unitTOconvert=this->unitTOconvert;
@@ -173,10 +174,12 @@ PhysicalNumber PhysicalNumber::operator+(PhysicalNumber const &number){
 			break;
 		}
 		update(n);
+	cout<<"operator+ "<<n<<endl;
 		return n;
 	}
 
 PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
+	cout<<"operator- "<<*this<<"-"<<number<<endl;
 	ConvertionCheck(this, number);
 	PhysicalNumber n;
 	n.unitTOconvert=this->unitTOconvert;
@@ -236,10 +239,12 @@ PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
 		break;
 	}
 	update(n);
+	cout<<"operator- "<<n<<endl;
 	return n;
 }
 
 PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber &number){
+	cout<<"operator+= "<<*this<<"+="<<number<<endl;
 	ConvertionCheck(this, number);
 	switch(this->unitTOconvert){
 		case 1: 
@@ -297,10 +302,12 @@ PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber &number){
 		break;
 	}
 	update (*this);
+	cout<<"operator+= "<<*this<<endl;
     return *this;
 }
 
 PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber &number){
+	cout<<"operator-= "<<*this<<"-="<<number<<endl;
 	ConvertionCheck(this, number);
 	switch(this->unitTOconvert){
 		case 1: 
@@ -358,20 +365,24 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber &number){
 		break;
 	}
 	update(*this);
+	cout<<"operator-= "<<*this<<endl;
     return *this;
 }
 
 PhysicalNumber& PhysicalNumber::operator- () {
-         this->num = -this->num;
+        cout<<"operator - "<<*this<<endl; 
+	this->num = -this->num;
          return *this;
       }
 
 PhysicalNumber& PhysicalNumber::operator+ () {
-         this->num = abs(this->num);
+        cout<<"operator + "<<*this<<endl; 
+	this->num = abs(this->num);
          return *this;
 }
 
 bool PhysicalNumber::operator < (PhysicalNumber const &number) {
+	cout<<"operator < "<<*this<<"<"<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert < number.unitTOconvert)
@@ -382,6 +393,7 @@ bool PhysicalNumber::operator < (PhysicalNumber const &number) {
 }
 
 bool PhysicalNumber::operator > (PhysicalNumber const &number) {
+	cout<<"operator > "<<*this<<">"<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert > number.unitTOconvert)
@@ -392,6 +404,7 @@ bool PhysicalNumber::operator > (PhysicalNumber const &number) {
 }
 
 bool PhysicalNumber::operator == (PhysicalNumber const &number) {
+	cout<<"operator== "<<*this<<"=="<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert == number.unitTOconvert && this->num==number.num)
@@ -400,6 +413,7 @@ bool PhysicalNumber::operator == (PhysicalNumber const &number) {
 }
 
 bool PhysicalNumber::operator >= (PhysicalNumber const &number) {
+	cout<<"operator>= "<<*this<<">="<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert > number.unitTOconvert)
@@ -410,6 +424,7 @@ bool PhysicalNumber::operator >= (PhysicalNumber const &number) {
 }
 
 bool PhysicalNumber::operator <= (PhysicalNumber const &number) {
+	cout<<"operator<= "<<*this<<"<="<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert < number.unitTOconvert)
@@ -420,6 +435,7 @@ bool PhysicalNumber::operator <= (PhysicalNumber const &number) {
 }
 
 bool PhysicalNumber::operator != (PhysicalNumber const &number) {
+	cout<<"operator!= "<<*this<<"!="<<number<<endl;
 	ConvertionCheck(this, number);
 	update(*this); update(number);
 	if(this->unitTOconvert != number.unitTOconvert)
@@ -430,14 +446,16 @@ bool PhysicalNumber::operator != (PhysicalNumber const &number) {
 }
 
 PhysicalNumber PhysicalNumber::operator++ (int) {
-         PhysicalNumber result =*this;
+        cout<<"operator++ "<<*this<<endl; 
+	PhysicalNumber result =*this;
 		 this->num+=1;
          update(result);
 		 return result;
 }
 
 PhysicalNumber PhysicalNumber::operator-- (int) {
-         PhysicalNumber result=*this;
+        cout<<"operator-- "<<*this<<endl; 
+	PhysicalNumber result=*this;
 		 this->num+=1;
          update(result);
 		 return result;
