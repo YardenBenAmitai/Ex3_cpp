@@ -429,7 +429,7 @@ bool PhysicalNumber::operator != (PhysicalNumber const &number) {
 	return false;
 }
 
-PhysicalNumber& PhysicalNumber::++operator() {
+PhysicalNumber& PhysicalNumber::operator()++ {
          PhysicalNumber result=*this;
 		 result.num+=1;
 		 update(result);
@@ -442,7 +442,7 @@ PhysicalNumber PhysicalNumber::operator++ (int) {
 		 return result;
 }
 
-PhysicalNumber& PhysicalNumber::--operator () {
+PhysicalNumber& PhysicalNumber::operator-- () {
          PhysicalNumber result=*this;
 		 result.num-=1;
          update(result);
