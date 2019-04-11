@@ -1,5 +1,10 @@
 #include <iostream>
 
+#ifndef UNIT_H
+#define UNIT_H 
+#include "Unit.h"
+#endif
+
 using namespace std;
 
 namespace ariel
