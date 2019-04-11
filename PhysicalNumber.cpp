@@ -445,18 +445,16 @@ bool PhysicalNumber::operator != (PhysicalNumber const &number) {
 	return false;
 }
 
-PhysicalNumber PhysicalNumber::operator++ (int) {
+PhysicalNumber& PhysicalNumber::operator++ () {
         cout<<"operator++ "<<*this<<endl; 
-	PhysicalNumber result =*this;
-		 this->num+=1;
-         update(result);
-		 return result;
+	++(this->num);
+         update(*this);
+	return *this;
 }
 
-PhysicalNumber PhysicalNumber::operator-- (int) {
+PhysicalNumber& PhysicalNumber::operator-- () {
         cout<<"operator-- "<<*this<<endl; 
-	PhysicalNumber result=*this;
-		 this->num+=1;
-         update(result);
-		 return result;
+	++(this->num);
+         update(*this);
+	return *this;
 }
