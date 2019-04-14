@@ -179,7 +179,7 @@ PhysicalNumber PhysicalNumber::operator+(PhysicalNumber const &number){
 				n=this->num+number.num;
 			break;
 		}
-		return PhysicalNumber( n, this->unitTOconvert);
+		return update(PhysicalNumber( n, this->unitTOconvert));
 	}
 
 PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
@@ -240,7 +240,7 @@ PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
 		else n=this->num-number.num;
 		break;
 	}
-	return PhysicalNumber(n, this->unitTOconvert);
+	return update(PhysicalNumber(n, this->unitTOconvert));
 }
 
 PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber &number){
