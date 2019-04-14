@@ -377,6 +377,7 @@ bool PhysicalNumber::operator < (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<"<"<<b<<endl;
 	if(a.unitTOconvert < b.unitTOconvert && ((b.num>0) || (a.num<0 &&b.num<0)))
 		return true;
 	else if(a.unitTOconvert == b.unitTOconvert && a.num <b.num)
@@ -388,6 +389,7 @@ bool PhysicalNumber::operator > (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<">"<<b<<endl;
 	if(a.unitTOconvert > b.unitTOconvert && ((a.num>0) || (a.num<0 && b.num<0)))
 		return true;
 	else if(a.unitTOconvert == b.unitTOconvert && a.num > b.num)
@@ -399,6 +401,7 @@ bool PhysicalNumber::operator == (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<"=="<<b<<endl;
 	if(a.unitTOconvert ==b.unitTOconvert && a.num==b.num)
 		return true;
 	return false;
@@ -408,6 +411,7 @@ bool PhysicalNumber::operator >= (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<">="<<b<<endl;
 	if(a.unitTOconvert > b.unitTOconvert && ((a.num>0) || (a.num<0 && b.num<0)))
 		return true;
 	else if(a.unitTOconvert == b.unitTOconvert && a.num >= b.num)
@@ -419,6 +423,7 @@ bool PhysicalNumber::operator <= (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<"<="<<b<<endl;
 	if(a.unitTOconvert < b.unitTOconvert && ((b.num>0) || (a.num<0 && b.num<0)))
 		return true;
 	else if(a.unitTOconvert == b.unitTOconvert && a.num <= b.num)
@@ -430,6 +435,7 @@ bool PhysicalNumber::operator != (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
 	PhysicalNumber a=update(*this);
 	PhysicalNumber b=update(number);
+	cout<<a<<"!="<<b<<endl;
 	if(a.unitTOconvert != b.unitTOconvert)
 		return true;
 	else if(a.unitTOconvert == b.unitTOconvert && a.num != b.num)
