@@ -58,16 +58,16 @@ namespace ariel
 			double n;
 			int u;
 			input>> n>> s;
-			cout<<"input stream: "<<number.num<<" "<<s<<endl;
-			if (s.find("cm") != string::npos) u=1;
-			else if(s.find("km") != string::npos) u=3;
-			else if(s.find("sec") != string::npos) u=4;
-			else if(s.find("min") != string::npos) u=5;
-			else if(s.find("hour") != string::npos || s.find("hr") != string::npos) u=6;
-			else if(s.find("kg") != string::npos) u=8;
-			else if(s.find("t") != string::npos) u=9;
-			else if(s.find("g") != string::npos) u=7;
-			else if(s.find("m") != string::npos) u=2;
+			cout<<"input stream: "<<n<<" "<<s<<endl;
+			if (!s.compare("[cm]")) u=1;
+			else if(!s.compare("[m]")) u=2;
+			else if(!s.compare("[km]")) u=3;
+			else if(!s.compare("[sec]")) u=4;
+			else if(!s.compare("[min]")) u=5;
+			else if(!s.compare("[hour]")) u=6;
+			else if(!s.compare("[g]")) u=7;
+			else if(!s.compare("[kg]")) u=8;
+			else if(!s.compare("[ton]")) u=9;
 			else
 				throw std::invalid_argument("cannot recognise this measure");
 			number.num=n;
