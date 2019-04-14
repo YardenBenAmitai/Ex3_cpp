@@ -17,7 +17,7 @@ namespace ariel
 			unitTOconvert=b;
 		}
 		
-		PhysicalNumber update (PhysicalNumber const &number);
+		void update (PhysicalNumber &number);
 		bool ConvertionCheck(PhysicalNumber* a, PhysicalNumber b);
 		PhysicalNumber operator+(PhysicalNumber const &number);
 		PhysicalNumber operator-(PhysicalNumber const &number);
