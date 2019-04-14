@@ -56,6 +56,7 @@ namespace ariel
 		friend istream& operator>>(istream& input, PhysicalNumber& number){
 			string s;
 			input>> number.num>> s;
+			cout<<"input stream: "<<number.num<<" "<<s<<endl;
 			if (!s.compare("[cm]")) number.unitTOconvert=1;
 			else if(!s.compare("[m]")) number.unitTOconvert=2;
 			else if(!s.compare("[km]")) number.unitTOconvert=3;
