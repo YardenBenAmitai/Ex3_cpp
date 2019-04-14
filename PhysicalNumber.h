@@ -64,9 +64,9 @@ namespace ariel
 			else if(s.find("sec") != string::npos) u=4;
 			else if(s.find("min") != string::npos) u=5;
 			else if(s.find("hour") != string::npos || s.find("hr") != string::npos) u=6;
-			else if(s.find("gr") != string::npos) u=7;
 			else if(s.find("kg") != string::npos) u=8;
 			else if(s.find("t") != string::npos) u=9;
+			else if(s.find("g") != string::npos) u=7;
 			else if(s.find("m") != string::npos) u=2;
 			else
 				throw std::invalid_argument("cannot recognise this measure");
