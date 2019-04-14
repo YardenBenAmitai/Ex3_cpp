@@ -95,6 +95,7 @@ bool PhysicalNumber::ConvertionCheck(PhysicalNumber* a, PhysicalNumber b){
 	
 PhysicalNumber PhysicalNumber::operator+(PhysicalNumber const &number){
 		ConvertionCheck(this, number);
+	cout<<*this<<"+"<<number<<endl;
 		double n;
 		switch(this->unitTOconvert){
 			case 1 : 
@@ -183,6 +184,7 @@ PhysicalNumber PhysicalNumber::operator+(PhysicalNumber const &number){
 
 PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
 	ConvertionCheck(this, number);
+	cout<<*this<<"-"<<number<<endl;
 	double n;
 	switch(this->unitTOconvert){
 		case 1: 
@@ -244,6 +246,7 @@ PhysicalNumber PhysicalNumber::operator-(PhysicalNumber const &number){
 
 PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber &number){
 	ConvertionCheck(this, number);
+	cout<<*this<<"+="<<number<<endl;
 	switch(this->unitTOconvert){
 		case 1: 
         if(number.unitTOconvert==2) this->num += number.num*100;
@@ -304,6 +307,7 @@ PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber &number){
 
 PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber &number){
 	ConvertionCheck(this, number);
+	cout<<*this<<"-="<<number<<endl;
 	switch(this->unitTOconvert){
 		case 1: 
         if(number.unitTOconvert==2) this->num -= number.num*100;
@@ -374,6 +378,7 @@ PhysicalNumber& PhysicalNumber::operator+ () {
 
 bool PhysicalNumber::operator < (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<"<"<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
@@ -387,6 +392,7 @@ bool PhysicalNumber::operator < (PhysicalNumber const &number) {
 
 bool PhysicalNumber::operator > (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<">"<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
@@ -400,6 +406,7 @@ bool PhysicalNumber::operator > (PhysicalNumber const &number) {
 
 bool PhysicalNumber::operator == (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<"=="<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
@@ -411,6 +418,7 @@ bool PhysicalNumber::operator == (PhysicalNumber const &number) {
 
 bool PhysicalNumber::operator >= (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<">="<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
@@ -424,6 +432,7 @@ bool PhysicalNumber::operator >= (PhysicalNumber const &number) {
 
 bool PhysicalNumber::operator <= (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<"<="<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
@@ -437,6 +446,7 @@ bool PhysicalNumber::operator <= (PhysicalNumber const &number) {
 
 bool PhysicalNumber::operator != (PhysicalNumber const &number) {
 	ConvertionCheck(this, number);
+	cout<<*this<<"!="<<number<<endl;
 	PhysicalNumber a=*this;
 	PhysicalNumber b=number;
 	update(a); update(b);
