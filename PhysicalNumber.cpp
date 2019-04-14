@@ -8,76 +8,75 @@ using namespace ariel;
 
 void PhysicalNumber::update(PhysicalNumber &number){
 	int u=number.unitTOconvert;
-	for(int i=0;i<2;i++){
+	while(true){
 		switch (number.unitTOconvert){
 		case 1:
 		if (abs(number.num)>=100){
 			number.num=number.num/100;
-			u=2;
+			number.unitTOconvert=2;
 		}break;
 		
 		case 2:
 		if (abs(number.num)>=1000){
 			number.num=number.num/1000;
-			u=3;
-		}else if(abs(number.num)<1 && abs(number.num)>0){
+			number.unitTOconvert=3;
+		}else if(abs(number.num)<1){
 			number.num=number.num*100;
-			u=1;
+			number.unitTOconvert=1;
 		}break;
 		
 		case 3:
-		if(abs(number.num)<1 && abs(number.num)>0){
+		if(abs(number.num)<1){
 			number.num=number.num*1000;
-			u=2;
+			number.unitTOconvert=2;
 		}break;
 		
 		case 4:
 		if (abs(number.num)>=60){
 			number.num=number.num/60;
-			u=5;
+			number.unitTOconvert=5;
 		}break;
 		
 		case 5:
 		if (abs(number.num)>=60){
 			number.num=number.num/60;
-			u=6;
-		}else if(abs(number.num)<1 && abs(number.num)>0){
+			number.unitTOconvert=6;
+		}else if(abs(number.num)<1){
 			number.num=number.num*60;
-			u=4;
+			number.unitTOconvert=4;
 		}break;
 		
 		case 6:
-		if(abs(number.num)<1 && abs(number.num)>0){
+		if(abs(number.num)<1){
 			number.num=number.num*60;
-			u=5;
+			number.unitTOconvert=5;
 		}break;
 		
 		case 7:
 		if (abs(number.num)>=1000){
 			number.num=number.num/1000;
-			u=8;
+			number.unitTOconvert=8;
 		}break;
 		
 		case 8:
 		if (abs(number.num)>=1000){
 			number.num=number.num/1000;
-			u=9;
-		}else if(abs(number.num)<1 && abs(number.num)>0){
+			number.unitTOconvert=9;
+		}else if(abs(number.num)<1){
 			number.num=number.num*1000;
-			u=7;
+			number.unitTOconvert=7;
 		}break;
 		
 		case 9:
-		if(abs(number.num)<1 && abs(number.num)>0){
+		if(abs(number.num)<1){
 			number.num=number.num*1000;
-			u=8;
+			number.unitTOconvert=8;
 		}break;
 	}
 	
 	if(number.unitTOconvert==u)
 		break;
 	}
-	number.unitTOconvert=u;
 }
 
 bool PhysicalNumber::ConvertionCheck(PhysicalNumber* a, PhysicalNumber b){
