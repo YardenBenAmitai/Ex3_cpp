@@ -58,7 +58,6 @@ namespace ariel
 			double n;
 			int u;
 			input>> n>> s;
-			cout<<"input stream: "<<n<<" "<<s<<endl;
 			if (!s.compare("[cm]")) u=1;
 			else if(!s.compare("[m]")) u=2;
 			else if(!s.compare("[km]")) u=3;
