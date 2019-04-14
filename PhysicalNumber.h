@@ -62,7 +62,7 @@ namespace ariel
 			else if(!s.compare("[sec]")) number.unitTOconvert=4;
 			else if(!s.compare("[min]")) number.unitTOconvert=5;
 			else if(!s.compare("[hour]")) number.unitTOconvert=6;
-			else if(!s.compare("[gr]")) number.unitTOconvert=7;
+			else if(!s.compare("[g]")) number.unitTOconvert=7;
 			else if(!s.compare("[kg]")) number.unitTOconvert=8;
 			else if(!s.compare("[ton]")) number.unitTOconvert=9;
 			else
