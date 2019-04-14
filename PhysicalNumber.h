@@ -55,19 +55,23 @@ namespace ariel
 		
 		friend istream& operator>>(istream& input, PhysicalNumber& number){
 			string s;
-			input>> number.num>> s;
+			double n;
+			int u;
+			input>> n>> s;
 			cout<<"input stream: "<<number.num<<" "<<s<<endl;
-			if (!s.compare("[cm]")) number.unitTOconvert=1;
-			else if(!s.compare("[m]")) number.unitTOconvert=2;
-			else if(!s.compare("[km]")) number.unitTOconvert=3;
-			else if(!s.compare("[sec]")) number.unitTOconvert=4;
-			else if(!s.compare("[min]")) number.unitTOconvert=5;
-			else if(!s.compare("[hour]")) number.unitTOconvert=6;
-			else if(!s.compare("[g]")) number.unitTOconvert=7;
-			else if(!s.compare("[kg]")) number.unitTOconvert=8;
-			else if(!s.compare("[ton]")) number.unitTOconvert=9;
+			if (!s.compare("[cm]")) u=1;
+			else if(!s.compare("[m]")) u=2;
+			else if(!s.compare("[km]")) u=3;
+			else if(!s.compare("[sec]")) u=4;
+			else if(!s.compare("[min]")) u=5;
+			else if(!s.compare("[hour]")) u=6;
+			else if(!s.compare("[g]")) u=7;
+			else if(!s.compare("[kg]")) u=8;
+			else if(!s.compare("[ton]")) u=9;
 			else
 				throw std::invalid_argument("cannot recognise this measure");
+			number.num=n;
+			number.unitTOconvert=u;
 			return input;
 		}
 	};
