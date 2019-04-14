@@ -76,8 +76,9 @@ void PhysicalNumber::update(PhysicalNumber &number){
 	
 	if(number.unitTOconvert==u)
 		break;
-	}
 	u=number.unitTOconvert;
+	}
+	
 }
 
 bool PhysicalNumber::ConvertionCheck(PhysicalNumber* a, PhysicalNumber b){
