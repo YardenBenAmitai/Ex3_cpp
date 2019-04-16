@@ -68,7 +68,7 @@ namespace ariel
 			else if(!s.compare("[kg]")) u=8;
 			else if(!s.compare("[ton]")) u=9;
 			else
-				throw std::invalid_argument();
+				throw std::invalid_argument("");
 			number.num=n;
 			number.unitTOconvert=u;
 			return input;
