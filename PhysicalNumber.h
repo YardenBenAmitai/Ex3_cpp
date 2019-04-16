@@ -60,24 +60,23 @@ namespace ariel
 			input>> n>> s;
 			try{
 				if (!s.compare("[cm]")) u=1;
-			else if(!s.compare("[m]")) u=2;
-			else if(!s.compare("[km]")) u=3;
-			else if(!s.compare("[sec]")) u=4;
-			else if(!s.compare("[min]")) u=5;
-			else if(!s.compare("[hour]")) u=6;
-			else if(!s.compare("[g]")) u=7;
-			else if(!s.compare("[kg]")) u=8;
-			else if(!s.compare("[ton]")) u=9;
-			else throw std::invalid_argument("");
-			
-			number.num=n;
-			number.unitTOconvert=u;
-			return input;
+				else if(!s.compare("[m]")) u=2;
+				else if(!s.compare("[km]")) u=3;
+				else if(!s.compare("[sec]")) u=4;
+				else if(!s.compare("[min]")) u=5;
+				else if(!s.compare("[hour]")) u=6;
+				else if(!s.compare("[g]")) u=7;
+				else if(!s.compare("[kg]")) u=8;
+				else if(!s.compare("[ton]")) u=9;
+				else throw std::invalid_argument("");
+				
+				number.num=n;
+				number.unitTOconvert=u;
 			}
 			catch(exception& e){
 				cout<<"invalid measure"<<endl;
 			}
-			
+			return input;
 		}
 	};
 }
