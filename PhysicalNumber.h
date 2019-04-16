@@ -58,7 +58,8 @@ namespace ariel
 			double n;
 			int u;
 			input>> n>> s;
-			if (!s.compare("[cm]")) u=1;
+			try{
+				if (!s.compare("[cm]")) u=1;
 			else if(!s.compare("[m]")) u=2;
 			else if(!s.compare("[km]")) u=3;
 			else if(!s.compare("[sec]")) u=4;
@@ -67,13 +68,16 @@ namespace ariel
 			else if(!s.compare("[g]")) u=7;
 			else if(!s.compare("[kg]")) u=8;
 			else if(!s.compare("[ton]")) u=9;
-			else{
-				cout<<"cannot recognise measure"<<endl;
-				return;
-			}
+			else throw std::invalid_argument("");
+			
 			number.num=n;
 			number.unitTOconvert=u;
 			return input;
+			}
+			catch(exception& e){
+				cout<<"invalid measure"<<endl;
+			}
+			
 		}
 	};
 }
